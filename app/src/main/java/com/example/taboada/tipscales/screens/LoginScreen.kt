@@ -2,23 +2,28 @@ package com.example.taboada.tipscales.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
+/*
 @Preview
 @Composable
 fun LoginScreenPreview() {
     LoginScreen()
 }
+*/
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -46,7 +51,7 @@ fun LoginScreen() {
         ) {
             ElevatedButton(
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Screens.Home.route)},
                 modifier = Modifier.padding(5.dp)
             ) {
                 Text(

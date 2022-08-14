@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Preview
 @Composable
@@ -21,7 +22,7 @@ fun HomeScreenPreview() {
 }
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +50,7 @@ fun HomeScreen() {
         ) {
             ElevatedButton(
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Screens.Detail.route) },
                 modifier = Modifier.padding(5.dp)
             ) {
                 Text(
